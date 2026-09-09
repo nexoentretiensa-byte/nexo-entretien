@@ -1151,22 +1151,124 @@
 
 
 <script>
-
   const frBtn = document.getElementById("frBtn");
   const enBtn = document.getElementById("enBtn");
+
+  const translations = {
+    fr: {
+      select: "Sélectionnez",
+      clinic: "Clinique",
+      gym: "Gym / centre d'entraînement",
+      office: "Bureaux",
+      building: "Immeuble / aire commune",
+      retail: "Commerce",
+      other: "Autre",
+
+      once: "1 fois par semaine",
+      twice: "2 fois par semaine",
+      three: "3 fois par semaine",
+      frequent: "4-5 fois par semaine",
+      determine: "À déterminer",
+
+      sizePlaceholder: "Ex. 3 500 pi² / Je ne sais pas",
+      messagePlaceholder: "Décrivez brièvement vos besoins particuliers..."
+    },
+
+    en: {
+      select: "Select an option",
+      clinic: "Clinic",
+      gym: "Gym / fitness centre",
+      office: "Offices",
+      building: "Building / common area",
+      retail: "Retail / commercial space",
+      other: "Other",
+
+      once: "Once a week",
+      twice: "Twice a week",
+      three: "3 times a week",
+      frequent: "4-5 times a week",
+      determine: "To be determined",
+
+      sizePlaceholder: "Ex. 3,500 sq. ft. / I don't know",
+      messagePlaceholder: "Briefly describe any specific needs..."
+    }
+  };
 
   function changeLanguage(language) {
 
     document.documentElement.lang = language;
 
     document.querySelectorAll("[data-fr]").forEach(element => {
-
       element.textContent =
         language === "fr"
-        ? element.dataset.fr
-        : element.dataset.en;
-
+          ? element.dataset.fr
+          : element.dataset.en;
     });
+
+    const typeSelect =
+      document.querySelector('select[name="type_etablissement"]');
+
+    if (typeSelect) {
+      typeSelect.options[0].text =
+        translations[language].select;
+
+      typeSelect.options[1].text =
+        translations[language].clinic;
+
+      typeSelect.options[2].text =
+        translations[language].gym;
+
+      typeSelect.options[3].text =
+        translations[language].office;
+
+      typeSelect.options[4].text =
+        translations[language].building;
+
+      typeSelect.options[5].text =
+        translations[language].retail;
+
+      typeSelect.options[6].text =
+        translations[language].other;
+    }
+
+    const frequencySelect =
+      document.querySelector('select[name="frequence"]');
+
+    if (frequencySelect) {
+      frequencySelect.options[0].text =
+        translations[language].select;
+
+      frequencySelect.options[1].text =
+        translations[language].once;
+
+      frequencySelect.options[2].text =
+        translations[language].twice;
+
+      frequencySelect.options[3].text =
+        translations[language].three;
+
+      frequencySelect.options[4].text =
+        translations[language].frequent;
+
+      frequencySelect.options[5].text =
+        translations[language].determine;
+    }
+
+    const sizeInput =
+      document.querySelector('input[name="superficie"]');
+
+    if (sizeInput) {
+      sizeInput.placeholder =
+        translations[language].sizePlaceholder;
+    }
+
+    const message =
+      document.querySelector('textarea[name="message"]');
+
+    if (message) {
+      message.placeholder =
+        translations[language].messagePlaceholder;
+    }
 
     if (language === "fr") {
       frBtn.classList.add("active");
@@ -1176,6 +1278,7 @@
       frBtn.classList.remove("active");
     }
 
+    localStorage.setItem("nexoLanguage", language);
   }
 
   frBtn.addEventListener("click", () => {
@@ -1186,7 +1289,10 @@
     changeLanguage("en");
   });
 
-</script>
+  const savedLanguage =
+    localStorage.getItem("nexoLanguage") || "fr";
 
+  changeLanguage(savedLanguage);
+</script>
 </body>
 </html>
