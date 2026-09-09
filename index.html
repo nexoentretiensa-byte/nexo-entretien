@@ -500,61 +500,49 @@
   padding: 5px;
 }
 
-    @media (max-width: 900px) {
+@media (max-width: 900px) {
 
   .menu-toggle {
     display: block;
     order: 2;
   }
 
-  .language-switch {
-    order: 3;
-  }
-
-  nav {
-    display: none;
-    position: absolute;
-    top: 82px;
-    left: 0;
-    width: 100%;
-    background: white;
-    padding: 25px 5%;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0;
-    border-top: 1px solid var(--border);
-    box-shadow: 0 12px 25px rgba(0,0,0,0.08);
-  }
-
-  nav.open {
-    display: flex;
-  }
-
-  nav a {
-    width: 100%;
-    padding: 14px 0;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .navbar {
-    position: relative;
-  }
-
-  .service-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .why-grid,
-  .quote-layout {
-    grid-template-columns: 1fr;
-  }
-
-  .form-row {
-    grid-template-columns: 1fr;
-  }
+  /* ...resto del código móvil... */
 
   .hero {
     min-height: 74vh;
+  }
+
+  /* Ajustes de espacio para celular */
+
+  section {
+    padding: 55px 0;
+  }
+
+  .services,
+  #apropos {
+    min-height: auto !important;
+    height: auto !important;
+  }
+
+  .service-grid {
+    gap: 16px;
+  }
+
+  .service-card {
+    min-height: auto !important;
+    height: auto !important;
+    padding: 24px;
+  }
+
+  .why-grid {
+    gap: 30px;
+    align-items: start;
+  }
+
+  .why-box {
+    margin: 0;
+    padding: 30px 24px;
   }
 }
       .service-grid {
