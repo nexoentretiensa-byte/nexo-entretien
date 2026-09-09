@@ -61,12 +61,18 @@
       gap: 30px;
     }
 
-    .brand {
-      font-size: 30px;
-      font-weight: 900;
-      letter-spacing: 3px;
-      color: var(--navy);
-    }
+.brand {
+  display: flex;
+  align-items: center;
+}
+
+.brand img {
+  display: block;
+  width: 145px;
+  height: auto;
+  max-height: 68px;
+  object-fit: contain;
+}
 
     nav {
       display: flex;
@@ -483,9 +489,9 @@
 <header>
   <div class="navbar">
 
-    <a href="#accueil" class="brand">
-      NEXO
-    </a>
+<a href="#accueil" class="brand">
+  <img src="logo-nexo.png" alt="NEXO Entretien Commercial">
+</a>
 
     <nav>
       <a href="#accueil" data-fr="Accueil" data-en="Home">Accueil</a>
