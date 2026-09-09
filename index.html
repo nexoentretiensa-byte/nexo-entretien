@@ -466,9 +466,55 @@
       font-size: 14px;
     }
 
+    .menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--navy);
+  font-size: 30px;
+  cursor: pointer;
+  padding: 5px;
+}
+
     @media (max-width: 900px) {
       nav {
-        display: none;
+        .menu-toggle {
+  display: block;
+  order: 2;
+}
+
+.language-switch {
+  order: 3;
+}
+
+nav {
+  display: none;
+  position: absolute;
+  top: 82px;
+  left: 0;
+  width: 100%;
+  background: white;
+  padding: 25px 5%;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  border-top: 1px solid var(--border);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.08);
+}
+
+nav.open {
+  display: flex;
+}
+
+nav a {
+  width: 100%;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.navbar {
+  position: relative;
+}
       }
 
       .service-grid {
@@ -499,7 +545,9 @@
 <a href="#accueil" class="brand">
   <img src="logo-nexo1.png" alt="NEXO Entretien Commercial">
 </a>
-
+<button class="menu-toggle" id="menuToggle" aria-label="Menu">
+  ☰
+</button>
     <nav>
       <a href="#accueil" data-fr="Accueil" data-en="Home">Accueil</a>
       <a href="#services" data-fr="Services" data-en="Services">Services</a>
@@ -1293,6 +1341,22 @@
     localStorage.getItem("nexoLanguage") || "fr";
 
   changeLanguage(savedLanguage);
+  const menuToggle = document.getElementById("menuToggle");
+const navMenu = document.querySelector("nav");
+
+menuToggle.addEventListener("click", () => {
+  navMenu.classList.toggle("open");
+
+  menuToggle.textContent =
+    navMenu.classList.contains("open") ? "✕" : "☰";
+});
+
+navMenu.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => {
+    navMenu.classList.remove("open");
+    menuToggle.textContent = "☰";
+  });
+});
 </script>
 </body>
 </html>
