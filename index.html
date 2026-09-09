@@ -3,199 +3,476 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>NEXO Entretien Commercial</title>
+  <meta
+    name="description"
+    content="Services d'entretien commercial professionnels pour bureaux, cliniques, gyms, commerces et immeubles."
+  >
 
   <style>
+    :root {
+      --navy: #062746;
+      --navy-dark: #041b31;
+      --blue: #1379d3;
+      --blue-light: #eaf4fc;
+      --white: #ffffff;
+      --gray: #66717c;
+      --light: #f6f8fa;
+      --border: #dfe5ea;
+    }
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      color: #0b2b4c;
-      background: #ffffff;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--navy);
+      background: var(--white);
       line-height: 1.6;
     }
 
+    a {
+      text-decoration: none;
+    }
+
     header {
-      background: #ffffff;
-      padding: 18px 8%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid #e5e5e5;
       position: sticky;
       top: 0;
       z-index: 1000;
+      background: rgba(255,255,255,0.97);
+      border-bottom: 1px solid var(--border);
     }
 
-    .logo {
-      font-size: 28px;
-      font-weight: 800;
-      letter-spacing: 2px;
-      color: #0b2b4c;
+    .navbar {
+      width: min(1180px, 90%);
+      margin: auto;
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .brand {
+      font-size: 30px;
+      font-weight: 900;
+      letter-spacing: 3px;
+      color: var(--navy);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 25px;
     }
 
     nav a {
-      text-decoration: none;
-      color: #0b2b4c;
-      margin-left: 24px;
-      font-weight: 600;
-      font-size: 15px;
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 14px;
     }
 
     nav a:hover {
-      color: #1478d4;
+      color: var(--blue);
+    }
+
+    .language-switch {
+      display: flex;
+      gap: 8px;
+      font-weight: 800;
+    }
+
+    .language-switch button {
+      border: none;
+      background: none;
+      cursor: pointer;
+      color: var(--gray);
+      font-weight: 800;
+      padding: 4px;
+    }
+
+    .language-switch button.active {
+      color: var(--blue);
     }
 
     .hero {
-      min-height: 78vh;
+      min-height: 82vh;
       display: flex;
       align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 80px 8%;
-      background: linear-gradient(
-        rgba(5, 32, 58, 0.78),
-        rgba(5, 32, 58, 0.78)
-      ),
-      url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1600&q=80');
+      position: relative;
+      color: white;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(3,28,51,0.94) 0%,
+          rgba(3,28,51,0.80) 50%,
+          rgba(3,28,51,0.45) 100%
+        ),
+        url("https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1800&q=85");
       background-size: cover;
       background-position: center;
-      color: white;
+    }
+
+    .hero-inner {
+      width: min(1180px, 90%);
+      margin: auto;
     }
 
     .hero-content {
-      max-width: 800px;
+      max-width: 690px;
+    }
+
+    .hero-label {
+      color: #8ac9ff;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-weight: 800;
+      margin-bottom: 15px;
+      font-size: 14px;
     }
 
     .hero h1 {
-      font-size: 52px;
-      margin-bottom: 20px;
+      font-size: clamp(42px, 6vw, 72px);
+      line-height: 1.05;
+      margin-bottom: 24px;
     }
 
     .hero p {
-      font-size: 22px;
-      margin-bottom: 30px;
+      max-width: 620px;
+      font-size: 20px;
+      color: #e9f0f6;
+      margin-bottom: 32px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
     }
 
     .btn {
       display: inline-block;
-      background: #1478d4;
-      color: white;
-      padding: 14px 28px;
-      text-decoration: none;
+      padding: 15px 27px;
       border-radius: 6px;
-      font-weight: 700;
-      transition: 0.3s;
+      font-weight: 800;
+      transition: .2s;
     }
 
-    .btn:hover {
-      background: #0f5fa9;
+    .btn-primary {
+      background: var(--blue);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #0d66b5;
       transform: translateY(-2px);
     }
 
-    section {
-      padding: 80px 8%;
+    .btn-outline {
+      border: 2px solid white;
+      color: white;
     }
 
-    .section-title {
-      text-align: center;
+    .btn-outline:hover {
+      background: white;
+      color: var(--navy);
+    }
+
+    section {
+      padding: 90px 0;
+    }
+
+    .container {
+      width: min(1180px, 90%);
+      margin: auto;
+    }
+
+    .section-heading {
+      max-width: 720px;
       margin-bottom: 45px;
     }
 
-    .section-title h2 {
-      font-size: 36px;
+    .section-heading.center {
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+
+    .eyebrow {
+      color: var(--blue);
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 900;
       margin-bottom: 10px;
     }
 
-    .section-title p {
-      color: #666;
+    .section-heading h2 {
+      font-size: clamp(32px, 4vw, 46px);
+      line-height: 1.15;
+      margin-bottom: 15px;
+    }
+
+    .section-heading p {
+      color: var(--gray);
+      font-size: 18px;
     }
 
     .services {
-      background: #f7f9fb;
+      background: var(--light);
     }
 
     .service-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+      gap: 22px;
     }
 
-    .card {
+    .service-card {
       background: white;
-      padding: 32px;
-      border-radius: 10px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.07);
+      padding: 30px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      transition: .2s;
     }
 
-    .card h3 {
-      margin-bottom: 12px;
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.08);
     }
 
-    .about {
-      text-align: center;
-      max-width: 900px;
-      margin: auto;
+    .service-number {
+      width: 43px;
+      height: 43px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--blue-light);
+      color: var(--blue);
+      font-weight: 900;
+      margin-bottom: 20px;
     }
 
-    .quote-section {
-      background: #0b2b4c;
+    .service-card h3 {
+      margin-bottom: 10px;
+      font-size: 21px;
+    }
+
+    .service-card p {
+      color: var(--gray);
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 65px;
+      align-items: center;
+    }
+
+    .why-box {
+      background: var(--navy);
       color: white;
+      padding: 45px;
+      border-radius: 14px;
+    }
+
+    .why-box h3 {
+      font-size: 32px;
+      margin-bottom: 25px;
+    }
+
+    .value {
+      padding: 18px 0;
+      border-bottom: 1px solid rgba(255,255,255,.15);
+    }
+
+    .value:last-child {
+      border-bottom: none;
+    }
+
+    .value strong {
+      display: block;
+      color: #8ac9ff;
+      font-size: 19px;
+      margin-bottom: 4px;
+    }
+
+    .why-text h2 {
+      font-size: 42px;
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    .why-text p {
+      color: var(--gray);
+      font-size: 18px;
+      margin-bottom: 18px;
+    }
+
+    .quote {
+      background: var(--navy);
+      color: white;
+    }
+
+    .quote .section-heading p {
+      color: #d2deea;
+    }
+
+    .quote-layout {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .quote-info h3 {
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+
+    .quote-info p {
+      color: #d2deea;
+      margin-bottom: 25px;
+    }
+
+    .contact-line {
+      margin-bottom: 12px;
+      font-weight: 700;
     }
 
     form {
-      max-width: 700px;
-      margin: auto;
+      background: white;
+      color: var(--navy);
+      padding: 35px;
+      border-radius: 14px;
       display: grid;
+      gap: 18px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       gap: 16px;
     }
 
-    input, select, textarea {
+    label {
+      display: block;
+      font-weight: 800;
+      margin-bottom: 6px;
+      font-size: 14px;
+    }
+
+    .required {
+      color: #d13b3b;
+    }
+
+    input,
+    select,
+    textarea {
       width: 100%;
-      padding: 14px;
-      border: none;
-      border-radius: 6px;
-      font-size: 16px;
+      border: 1px solid #cfd7df;
+      border-radius: 7px;
+      padding: 13px 14px;
+      font-size: 15px;
+      font-family: inherit;
+      outline: none;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(19,121,211,.1);
     }
 
     textarea {
-      min-height: 140px;
+      min-height: 120px;
       resize: vertical;
     }
 
-    button {
-      background: #1478d4;
-      color: white;
+    .form-note {
+      font-size: 13px;
+      color: var(--gray);
+    }
+
+    .submit-btn {
       border: none;
-      padding: 15px;
-      border-radius: 6px;
+      background: var(--blue);
+      color: white;
+      padding: 15px 22px;
+      border-radius: 7px;
       font-size: 16px;
-      font-weight: 700;
+      font-weight: 900;
       cursor: pointer;
     }
 
-    footer {
-      text-align: center;
-      padding: 35px 8%;
-      background: #071c31;
-      color: white;
+    .submit-btn:hover {
+      background: #0d66b5;
     }
 
-    @media (max-width: 850px) {
+    footer {
+      background: var(--navy-dark);
+      color: white;
+      padding: 48px 0 30px;
+    }
+
+    .footer-grid {
+      width: min(1180px, 90%);
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .footer-brand {
+      font-size: 26px;
+      font-weight: 900;
+      letter-spacing: 2px;
+    }
+
+    footer p,
+    footer a {
+      color: #cdd8e2;
+    }
+
+    .copyright {
+      width: min(1180px, 90%);
+      margin: 35px auto 0;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,.12);
+      color: #9dafbd;
+      font-size: 14px;
+    }
+
+    @media (max-width: 900px) {
       nav {
         display: none;
       }
 
-      .hero h1 {
-        font-size: 38px;
-      }
-
       .service-grid {
         grid-template-columns: 1fr;
+      }
+
+      .why-grid,
+      .quote-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: 74vh;
       }
     }
   </style>
@@ -204,181 +481,698 @@
 <body>
 
 <header>
-  <div class="logo">NEXO</div>
+  <div class="navbar">
 
-  <nav>
-    <a href="#accueil">Accueil</a>
-    <a href="#services">Services</a>
-    <a href="#apropos">À propos</a>
-    <a href="#soumission">Soumission</a>
-    <a href="#contact">Contact</a>
-    <a href="#">FR | EN</a>
-  </nav>
+    <a href="#accueil" class="brand">
+      NEXO
+    </a>
+
+    <nav>
+      <a href="#accueil" data-fr="Accueil" data-en="Home">Accueil</a>
+      <a href="#services" data-fr="Services" data-en="Services">Services</a>
+      <a href="#apropos" data-fr="À propos" data-en="About">À propos</a>
+      <a href="#soumission" data-fr="Soumission" data-en="Quote">Soumission</a>
+      <a href="#contact" data-fr="Contact" data-en="Contact">Contact</a>
+    </nav>
+
+    <div class="language-switch">
+      <button id="frBtn" class="active">FR</button>
+      <span>|</span>
+      <button id="enBtn">EN</button>
+    </div>
+
+  </div>
 </header>
 
+
 <section class="hero" id="accueil">
-  <div class="hero-content">
-    <h1>NEXO Entretien Commercial</h1>
 
-    <p>
-      Des espaces propres. Un service sur lequel vous pouvez compter.
-    </p>
+  <div class="hero-inner">
 
-    <a href="#soumission" class="btn">
-      Demander une soumission
-    </a>
+    <div class="hero-content">
+
+      <div
+        class="hero-label"
+        data-fr="Entretien commercial"
+        data-en="Commercial cleaning"
+      >
+        Entretien commercial
+      </div>
+
+      <h1
+        data-fr="Des espaces propres. Un service sur lequel vous pouvez compter."
+        data-en="Clean spaces. Service you can count on."
+      >
+        Des espaces propres. Un service sur lequel vous pouvez compter.
+      </h1>
+
+      <p
+        data-fr="NEXO offre des services d'entretien commercial adaptés aux besoins de votre entreprise, avec une approche professionnelle, fiable et attentive."
+        data-en="NEXO provides commercial cleaning services tailored to your business, with a professional, reliable and attentive approach."
+      >
+        NEXO offre des services d'entretien commercial adaptés aux besoins de votre entreprise, avec une approche professionnelle, fiable et attentive.
+      </p>
+
+      <div class="buttons">
+
+        <a
+          href="#soumission"
+          class="btn btn-primary"
+          data-fr="Demander une soumission"
+          data-en="Request a quote"
+        >
+          Demander une soumission
+        </a>
+
+        <a
+          href="#services"
+          class="btn btn-outline"
+          data-fr="Voir nos services"
+          data-en="View our services"
+        >
+          Voir nos services
+        </a>
+
+      </div>
+
+    </div>
+
   </div>
+
 </section>
+
 
 <section class="services" id="services">
-  <div class="section-title">
-    <h2>Nos services</h2>
-    <p>Des solutions adaptées aux besoins de votre entreprise.</p>
+
+  <div class="container">
+
+    <div class="section-heading center">
+
+      <div
+        class="eyebrow"
+        data-fr="Nos services"
+        data-en="Our services"
+      >
+        Nos services
+      </div>
+
+      <h2
+        data-fr="L'entretien commercial adapté à votre environnement"
+        data-en="Commercial cleaning tailored to your environment"
+      >
+        L'entretien commercial adapté à votre environnement
+      </h2>
+
+      <p
+        data-fr="Nous desservons différents types d'espaces commerciaux et adaptons notre entretien aux besoins de chaque établissement."
+        data-en="We serve different types of commercial spaces and tailor our cleaning services to each facility."
+      >
+        Nous desservons différents types d'espaces commerciaux et adaptons notre entretien aux besoins de chaque établissement.
+      </p>
+
+    </div>
+
+
+    <div class="service-grid">
+
+      <div class="service-card">
+        <div class="service-number">01</div>
+        <h3
+          data-fr="Cliniques"
+          data-en="Clinics"
+        >
+          Cliniques
+        </h3>
+        <p
+          data-fr="Entretien des cliniques médicales, dentaires et autres espaces professionnels."
+          data-en="Cleaning for medical, dental and other professional clinics."
+        >
+          Entretien des cliniques médicales, dentaires et autres espaces professionnels.
+        </p>
+      </div>
+
+
+      <div class="service-card">
+        <div class="service-number">02</div>
+        <h3
+          data-fr="Gyms et centres d'entraînement"
+          data-en="Gyms and fitness centres"
+        >
+          Gyms et centres d'entraînement
+        </h3>
+        <p
+          data-fr="Entretien des espaces d'entraînement, vestiaires, salles communes et installations."
+          data-en="Cleaning of workout areas, locker rooms, common spaces and facilities."
+        >
+          Entretien des espaces d'entraînement, vestiaires, salles communes et installations.
+        </p>
+      </div>
+
+
+      <div class="service-card">
+        <div class="service-number">03</div>
+        <h3
+          data-fr="Bureaux"
+          data-en="Offices"
+        >
+          Bureaux
+        </h3>
+        <p
+          data-fr="Entretien régulier des bureaux, salles de réunion, cuisines et espaces de travail."
+          data-en="Regular cleaning of offices, meeting rooms, kitchens and workspaces."
+        >
+          Entretien régulier des bureaux, salles de réunion, cuisines et espaces de travail.
+        </p>
+      </div>
+
+
+      <div class="service-card">
+        <div class="service-number">04</div>
+        <h3
+          data-fr="Immeubles et aires communes"
+          data-en="Buildings and common areas"
+        >
+          Immeubles et aires communes
+        </h3>
+        <p
+          data-fr="Entretien des halls, corridors, escaliers, ascenseurs et autres espaces partagés."
+          data-en="Cleaning of lobbies, hallways, stairs, elevators and other shared spaces."
+        >
+          Entretien des halls, corridors, escaliers, ascenseurs et autres espaces partagés.
+        </p>
+      </div>
+
+
+      <div class="service-card">
+        <div class="service-number">05</div>
+        <h3
+          data-fr="Commerces"
+          data-en="Retail spaces"
+        >
+          Commerces
+        </h3>
+        <p
+          data-fr="Solutions d'entretien pour boutiques, salons, studios et autres établissements commerciaux."
+          data-en="Cleaning solutions for shops, salons, studios and other commercial establishments."
+        >
+          Solutions d'entretien pour boutiques, salons, studios et autres établissements commerciaux.
+        </p>
+      </div>
+
+
+      <div class="service-card">
+        <div class="service-number">06</div>
+        <h3
+          data-fr="Autres espaces commerciaux"
+          data-en="Other commercial spaces"
+        >
+          Autres espaces commerciaux
+        </h3>
+        <p
+          data-fr="Votre établissement ne figure pas dans la liste? Parlez-nous de vos besoins."
+          data-en="Don't see your facility listed? Tell us about your needs."
+        >
+          Votre établissement ne figure pas dans la liste? Parlez-nous de vos besoins.
+        </p>
+      </div>
+
+    </div>
+
   </div>
 
-  <div class="service-grid">
-
-    <div class="card">
-      <h3>Bureaux</h3>
-      <p>
-        Entretien régulier des espaces de travail, salles de réunion,
-        cuisines et espaces communs.
-      </p>
-    </div>
-
-    <div class="card">
-      <h3>Immeubles et aires communes</h3>
-      <p>
-        Nettoyage des halls d'entrée, corridors, escaliers,
-        ascenseurs et espaces partagés.
-      </p>
-    </div>
-
-    <div class="card">
-      <h3>Commerces</h3>
-      <p>
-        Services d'entretien adaptés aux horaires et aux besoins
-        spécifiques de votre établissement.
-      </p>
-    </div>
-
-  </div>
 </section>
+
 
 <section id="apropos">
-  <div class="about">
 
-    <div class="section-title">
-      <h2>Pourquoi NEXO?</h2>
+  <div class="container">
+
+    <div class="why-grid">
+
+      <div class="why-box">
+
+        <h3
+          data-fr="Propreté. Qualité. Confiance."
+          data-en="Cleanliness. Quality. Trust."
+        >
+          Propreté. Qualité. Confiance.
+        </h3>
+
+        <div class="value">
+          <strong data-fr="Propreté" data-en="Cleanliness">Propreté</strong>
+          <span
+            data-fr="Une attention constante aux détails et à votre environnement."
+            data-en="Consistent attention to detail and your environment."
+          >
+            Une attention constante aux détails et à votre environnement.
+          </span>
+        </div>
+
+        <div class="value">
+          <strong data-fr="Qualité" data-en="Quality">Qualité</strong>
+          <span
+            data-fr="Un service professionnel adapté aux besoins de votre entreprise."
+            data-en="Professional service tailored to the needs of your business."
+          >
+            Un service professionnel adapté aux besoins de votre entreprise.
+          </span>
+        </div>
+
+        <div class="value">
+          <strong data-fr="Confiance" data-en="Trust">Confiance</strong>
+          <span
+            data-fr="Une communication claire et un service sur lequel vous pouvez compter."
+            data-en="Clear communication and service you can rely on."
+          >
+            Une communication claire et un service sur lequel vous pouvez compter.
+          </span>
+        </div>
+
+      </div>
+
+
+      <div class="why-text">
+
+        <div
+          class="eyebrow"
+          data-fr="À propos de NEXO"
+          data-en="About NEXO"
+        >
+          À propos de NEXO
+        </div>
+
+        <h2
+          data-fr="Un partenaire pour l'entretien de votre entreprise"
+          data-en="A partner for your business cleaning needs"
+        >
+          Un partenaire pour l'entretien de votre entreprise
+        </h2>
+
+        <p
+          data-fr="Chez NEXO Entretien Commercial, notre objectif est simple : offrir un environnement propre, professionnel et accueillant pour vos employés, vos clients et vos visiteurs."
+          data-en="At NEXO Commercial Cleaning, our goal is simple: provide a clean, professional and welcoming environment for your employees, clients and visitors."
+        >
+          Chez NEXO Entretien Commercial, notre objectif est simple : offrir un environnement propre, professionnel et accueillant pour vos employés, vos clients et vos visiteurs.
+        </p>
+
+        <p
+          data-fr="Nous adaptons notre service à votre établissement, à votre horaire et à vos besoins."
+          data-en="We tailor our service to your facility, schedule and specific needs."
+        >
+          Nous adaptons notre service à votre établissement, à votre horaire et à vos besoins.
+        </p>
+
+      </div>
+
     </div>
 
-    <p>
-      Chez NEXO Entretien Commercial, nous croyons qu'un espace propre
-      contribue à une meilleure image, un meilleur environnement de travail
-      et une meilleure expérience pour vos employés et vos clients.
-    </p>
-
-    <br>
-
-    <h3>Propreté • Qualité • Confiance</h3>
-
-  </div>
-</section>
-
-<section class="quote-section" id="soumission">
-
-  <div class="section-title">
-    <h2>Demander une soumission</h2>
-    <p style="color:#d9e3ec;">
-      Parlez-nous de vos besoins et nous communiquerons avec vous.
-    </p>
   </div>
 
-  <form name="soumission" method="POST" data-netlify="true">
+</section>
 
-    <input type="hidden" name="form-name" value="soumission">
 
-    <input
-      type="text"
-      name="nom"
-      placeholder="Nom"
-      required
-    >
+<section class="quote" id="soumission">
 
-    <input
-      type="text"
-      name="entreprise"
-      placeholder="Entreprise"
-    >
+  <div class="container">
 
-    <input
-      type="tel"
-      name="telephone"
-      placeholder="Téléphone"
-      required
-    >
+    <div class="quote-layout">
 
-    <input
-      type="email"
-      name="email"
-      placeholder="Courriel"
-      required
-    >
+      <div class="quote-info">
 
-    <input
-      type="text"
-      name="adresse"
-      placeholder="Adresse du bâtiment"
-    >
+        <div
+          class="eyebrow"
+          style="color:#8ac9ff;"
+          data-fr="Demande de soumission"
+          data-en="Quote request"
+        >
+          Demande de soumission
+        </div>
 
-    <select name="type">
-      <option value="">Type d'établissement</option>
-      <option>Bureaux</option>
-      <option>Immeuble / aire commune</option>
-      <option>Commerce</option>
-      <option>Autre</option>
-    </select>
+        <h3
+          data-fr="Parlez-nous de votre établissement."
+          data-en="Tell us about your facility."
+        >
+          Parlez-nous de votre établissement.
+        </h3>
 
-    <input
-      type="text"
-      name="superficie"
-      placeholder="Superficie approximative"
-    >
+        <p
+          data-fr="Remplissez le formulaire et nous communiquerons avec vous afin de mieux comprendre vos besoins."
+          data-en="Complete the form and we will contact you to better understand your needs."
+        >
+          Remplissez le formulaire et nous communiquerons avec vous afin de mieux comprendre vos besoins.
+        </p>
 
-    <textarea
-      name="message"
-      placeholder="Décrivez vos besoins"
-    ></textarea>
+        <div class="contact-line">
+          514-448-7347
+        </div>
 
-    <button type="submit">
-      Envoyer ma demande
-    </button>
+        <div class="contact-line">
+          nexoentretien.sa@gmail.com
+        </div>
 
-  </form>
+      </div>
+
+
+      <form
+        name="soumission"
+        method="POST"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+      >
+
+        <input type="hidden" name="form-name" value="soumission">
+
+        <p style="display:none;">
+          <label>
+            Ne remplissez pas ce champ:
+            <input name="bot-field">
+          </label>
+        </p>
+
+
+        <div class="form-row">
+
+          <div>
+            <label
+              data-fr="Nom complet"
+              data-en="Full name"
+            >
+              Nom complet
+            </label>
+
+            <input
+              type="text"
+              name="nom"
+              required
+            >
+          </div>
+
+
+          <div>
+            <label
+              data-fr="Entreprise"
+              data-en="Company"
+            >
+              Entreprise
+            </label>
+
+            <input
+              type="text"
+              name="entreprise"
+              required
+            >
+          </div>
+
+        </div>
+
+
+        <div class="form-row">
+
+          <div>
+            <label
+              data-fr="Téléphone"
+              data-en="Phone"
+            >
+              Téléphone
+            </label>
+
+            <input
+              type="tel"
+              name="telephone"
+              required
+            >
+          </div>
+
+
+          <div>
+            <label
+              data-fr="Courriel"
+              data-en="Email"
+            >
+              Courriel
+            </label>
+
+            <input
+              type="email"
+              name="email"
+              required
+            >
+          </div>
+
+        </div>
+
+
+        <div>
+
+          <label
+            data-fr="Adresse de l'établissement"
+            data-en="Facility address"
+          >
+            Adresse de l'établissement
+          </label>
+
+          <input
+            type="text"
+            name="adresse"
+            required
+          >
+
+        </div>
+
+
+        <div class="form-row">
+
+          <div>
+
+            <label
+              data-fr="Type d'établissement"
+              data-en="Facility type"
+            >
+              Type d'établissement
+            </label>
+
+            <select name="type_etablissement" required>
+
+              <option value="">
+                Sélectionnez
+              </option>
+
+              <option value="clinique">
+                Clinique
+              </option>
+
+              <option value="gym">
+                Gym / centre d'entraînement
+              </option>
+
+              <option value="bureau">
+                Bureaux
+              </option>
+
+              <option value="immeuble">
+                Immeuble / aire commune
+              </option>
+
+              <option value="commerce">
+                Commerce
+              </option>
+
+              <option value="autre">
+                Autre
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <div>
+
+            <label
+              data-fr="Fréquence souhaitée"
+              data-en="Preferred frequency"
+            >
+              Fréquence souhaitée
+            </label>
+
+            <select name="frequence" required>
+
+              <option value="">
+                Sélectionnez
+              </option>
+
+              <option>
+                1 fois par semaine
+              </option>
+
+              <option>
+                2 fois par semaine
+              </option>
+
+              <option>
+                3 fois par semaine
+              </option>
+
+              <option>
+                4-5 fois par semaine
+              </option>
+
+              <option>
+                À déterminer
+              </option>
+
+            </select>
+
+          </div>
+
+        </div>
+
+
+        <div>
+
+          <label
+            data-fr="Superficie approximative"
+            data-en="Approximate size"
+          >
+            Superficie approximative
+          </label>
+
+          <input
+            type="text"
+            name="superficie"
+            placeholder="Ex. 3 500 pi² / Je ne sais pas"
+            required
+          >
+
+        </div>
+
+
+        <div>
+
+          <label
+            data-fr="Informations supplémentaires"
+            data-en="Additional information"
+          >
+            Informations supplémentaires
+          </label>
+
+          <textarea
+            name="message"
+            placeholder="Décrivez brièvement vos besoins particuliers..."
+          ></textarea>
+
+        </div>
+
+
+        <p
+          class="form-note"
+          data-fr="Tous les champs ci-dessus sont requis, sauf les informations supplémentaires."
+          data-en="All fields above are required except additional information."
+        >
+          Tous les champs ci-dessus sont requis, sauf les informations supplémentaires.
+        </p>
+
+
+        <button
+          class="submit-btn"
+          type="submit"
+          data-fr="Demander une soumission"
+          data-en="Request a quote"
+        >
+          Demander une soumission
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
 
 </section>
+
 
 <footer id="contact">
 
-  <p>
-    <strong>NEXO Entretien Commercial</strong>
-  </p>
+  <div class="footer-grid">
 
-  <p>
-    514-448-7347
-  </p>
+    <div>
+      <div class="footer-brand">
+        NEXO
+      </div>
+      <p>Entretien Commercial</p>
+    </div>
 
-  <p>
-    nexoentretien.sa@gmail.com
-  </p>
+    <div>
+      <strong
+        data-fr="Contact"
+        data-en="Contact"
+      >
+        Contact
+      </strong>
 
-  <br>
+      <p>514-448-7347</p>
+      <p>nexoentretien.sa@gmail.com</p>
+    </div>
 
-  <p>
+    <div>
+      <strong
+        data-fr="Suivez-nous"
+        data-en="Follow us"
+      >
+        Suivez-nous
+      </strong>
+
+      <p>Instagram — Nexo Entretien</p>
+      <p>Facebook — Nexo Entretien</p>
+    </div>
+
+  </div>
+
+
+  <div class="copyright">
     © 2026 NEXO Entretien Commercial
-  </p>
+  </div>
 
 </footer>
+
+
+<script>
+
+  const frBtn = document.getElementById("frBtn");
+  const enBtn = document.getElementById("enBtn");
+
+  function changeLanguage(language) {
+
+    document.documentElement.lang = language;
+
+    document.querySelectorAll("[data-fr]").forEach(element => {
+
+      element.textContent =
+        language === "fr"
+        ? element.dataset.fr
+        : element.dataset.en;
+
+    });
+
+    if (language === "fr") {
+      frBtn.classList.add("active");
+      enBtn.classList.remove("active");
+    } else {
+      enBtn.classList.add("active");
+      frBtn.classList.remove("active");
+    }
+
+  }
+
+  frBtn.addEventListener("click", () => {
+    changeLanguage("fr");
+  });
+
+  enBtn.addEventListener("click", () => {
+    changeLanguage("en");
+  });
+
+</script>
 
 </body>
 </html>
