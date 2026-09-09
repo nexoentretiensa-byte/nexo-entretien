@@ -1,38 +1,32 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>NEXO Entretien Commercial | Rive-Sud de Montréal</title>
+  <title>NEXO Entretien Commercial | Rive-Sud de Montréal</title>
 
-<meta
-  name="description"
-  content="NEXO offre des services d'entretien commercial sur la Rive-Sud de Montréal pour bureaux, cliniques, gyms, commerces, immeubles et aires communes. Demandez une soumission."
->
+  <meta
+    name="description"
+    content="NEXO offre des services professionnels d'entretien commercial sur la Rive-Sud de Montréal pour cliniques, gyms, bureaux, commerces, immeubles et aires communes."
+  >
 
-<meta
-  name="robots"
-  content="index, follow"
->
+  <meta name="robots" content="index, follow">
 
   <link rel="icon" type="image/png" href="/logo-nexo1.png">
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "NEXO Entretien Commercial",
-  "description": "Services professionnels d'entretien commercial sur la Rive-Sud de Montréal.",
-  "telephone": "+1-514-448-7347",
-  "email": "nexoentretien.sa@gmail.com",
-  "logo": "https://nexo-entretien.netlify.app/logo-nexo1.png",
-  "url": "https://nexo-entretien.netlify.app/"
-}
-</script>
-
-<style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "NEXO Entretien Commercial",
+    "url": "https://nexo-entretien.ca/",
+    "logo": "https://nexo-entretien.ca/logo-nexo1.png",
+    "description": "Services professionnels d'entretien commercial sur la Rive-Sud de Montréal.",
+    "telephone": "+1-514-448-7347",
+    "email": "nexoentretien.sa@gmail.com"
+  }
+  </script>
 
   <style>
     :root {
@@ -41,9 +35,9 @@
       --blue: #1379d3;
       --blue-light: #eaf4fc;
       --white: #ffffff;
-      --gray: #66717c;
       --light: #f6f8fa;
-      --border: #dfe5ea;
+      --gray: #67727d;
+      --border: #dde4ea;
     }
 
     * {
@@ -61,60 +55,60 @@
       color: var(--navy);
       background: var(--white);
       line-height: 1.6;
+      overflow-x: hidden;
     }
 
     a {
       text-decoration: none;
     }
 
+    img {
+      max-width: 100%;
+    }
+
+    /* HEADER */
+
     header {
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(255,255,255,0.97);
+      background: rgba(255,255,255,.98);
       border-bottom: 1px solid var(--border);
     }
 
     .navbar {
       width: min(1180px, 90%);
+      height: 86px;
       margin: auto;
-      min-height: 82px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 30px;
+      position: relative;
     }
 
-.brand {
-  display: flex;
-  align-items: center;
-}
+    .brand {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+    }
 
-.brand {
-  display: flex;
-  align-items: center;
-  width: 160px;
-  height: 72px;
-  overflow: hidden;
-}
-
-.brand img {
-  width: 170px;
-  height: 170px;
-  object-fit: contain;
-  transform: scale(1.12);
-}
+    .brand img {
+      width: 125px;
+      height: 72px;
+      object-fit: contain;
+    }
 
     nav {
       display: flex;
       align-items: center;
-      gap: 25px;
+      gap: 28px;
     }
 
     nav a {
       color: var(--navy);
-      font-weight: 700;
       font-size: 14px;
+      font-weight: 700;
     }
 
     nav a:hover {
@@ -123,35 +117,48 @@
 
     .language-switch {
       display: flex;
-      gap: 8px;
+      align-items: center;
+      gap: 7px;
+      white-space: nowrap;
       font-weight: 800;
     }
 
     .language-switch button {
-      border: none;
-      background: none;
-      cursor: pointer;
+      border: 0;
+      background: transparent;
       color: var(--gray);
       font-weight: 800;
-      padding: 4px;
+      cursor: pointer;
+      padding: 5px;
     }
 
     .language-switch button.active {
       color: var(--blue);
     }
 
+    .menu-toggle {
+      display: none;
+      border: 0;
+      background: transparent;
+      color: var(--navy);
+      font-size: 31px;
+      cursor: pointer;
+      line-height: 1;
+    }
+
+    /* HERO */
+
     .hero {
-      min-height: 82vh;
+      min-height: 660px;
       display: flex;
       align-items: center;
-      position: relative;
       color: white;
       background:
         linear-gradient(
           90deg,
-          rgba(3,28,51,0.94) 0%,
-          rgba(3,28,51,0.80) 50%,
-          rgba(3,28,51,0.45) 100%
+          rgba(3,28,51,.94) 0%,
+          rgba(3,28,51,.82) 48%,
+          rgba(3,28,51,.48) 100%
         ),
         url("https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1800&q=85");
       background-size: cover;
@@ -161,31 +168,32 @@
     .hero-inner {
       width: min(1180px, 90%);
       margin: auto;
+      padding: 80px 0;
     }
 
     .hero-content {
-      max-width: 690px;
+      max-width: 720px;
     }
 
     .hero-label {
-      color: #8ac9ff;
+      color: #81c7ff;
       text-transform: uppercase;
       letter-spacing: 3px;
-      font-weight: 800;
-      margin-bottom: 15px;
       font-size: 14px;
+      font-weight: 900;
+      margin-bottom: 16px;
     }
 
     .hero h1 {
-      font-size: clamp(42px, 6vw, 72px);
-      line-height: 1.05;
-      margin-bottom: 24px;
+      font-size: clamp(43px, 5.5vw, 70px);
+      line-height: 1.07;
+      margin-bottom: 25px;
     }
 
     .hero p {
-      max-width: 620px;
-      font-size: 20px;
-      color: #e9f0f6;
+      max-width: 640px;
+      font-size: 19px;
+      color: #e8eff5;
       margin-bottom: 32px;
     }
 
@@ -197,10 +205,10 @@
 
     .btn {
       display: inline-block;
+      border-radius: 7px;
       padding: 15px 27px;
-      border-radius: 6px;
       font-weight: 800;
-      transition: .2s;
+      transition: .2s ease;
     }
 
     .btn-primary {
@@ -223,6 +231,8 @@
       color: var(--navy);
     }
 
+    /* GENERAL */
+
     section {
       padding: 90px 0;
     }
@@ -233,22 +243,22 @@
     }
 
     .section-heading {
-      max-width: 720px;
+      max-width: 760px;
       margin-bottom: 45px;
     }
 
     .section-heading.center {
+      text-align: center;
       margin-left: auto;
       margin-right: auto;
-      text-align: center;
     }
 
     .eyebrow {
       color: var(--blue);
-      font-size: 13px;
       text-transform: uppercase;
       letter-spacing: 2px;
       font-weight: 900;
+      font-size: 13px;
       margin-bottom: 10px;
     }
 
@@ -263,6 +273,8 @@
       font-size: 18px;
     }
 
+    /* SERVICES */
+
     .services {
       background: var(--light);
     }
@@ -275,23 +287,23 @@
 
     .service-card {
       background: white;
-      padding: 30px;
-      border-radius: 12px;
       border: 1px solid var(--border);
-      transition: .2s;
+      border-radius: 14px;
+      padding: 30px;
+      transition: .2s ease;
     }
 
     .service-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+      transform: translateY(-4px);
+      box-shadow: 0 15px 35px rgba(0,0,0,.07);
     }
 
     .service-number {
-      width: 43px;
-      height: 43px;
-      border-radius: 50%;
+      width: 44px;
+      height: 44px;
       display: grid;
       place-items: center;
+      border-radius: 50%;
       background: var(--blue-light);
       color: var(--blue);
       font-weight: 900;
@@ -299,13 +311,15 @@
     }
 
     .service-card h3 {
-      margin-bottom: 10px;
       font-size: 21px;
+      margin-bottom: 9px;
     }
 
     .service-card p {
       color: var(--gray);
     }
+
+    /* ABOUT */
 
     .why-grid {
       display: grid;
@@ -317,13 +331,13 @@
     .why-box {
       background: var(--navy);
       color: white;
+      border-radius: 15px;
       padding: 45px;
-      border-radius: 14px;
     }
 
     .why-box h3 {
-      font-size: 32px;
-      margin-bottom: 25px;
+      font-size: 31px;
+      margin-bottom: 22px;
     }
 
     .value {
@@ -332,18 +346,18 @@
     }
 
     .value:last-child {
-      border-bottom: none;
+      border-bottom: 0;
     }
 
     .value strong {
       display: block;
-      color: #8ac9ff;
+      color: #81c7ff;
       font-size: 19px;
-      margin-bottom: 4px;
+      margin-bottom: 5px;
     }
 
     .why-text h2 {
-      font-size: 42px;
+      font-size: clamp(34px, 4vw, 44px);
       line-height: 1.15;
       margin-bottom: 20px;
     }
@@ -351,16 +365,14 @@
     .why-text p {
       color: var(--gray);
       font-size: 18px;
-      margin-bottom: 18px;
+      margin-bottom: 17px;
     }
+
+    /* QUOTE */
 
     .quote {
       background: var(--navy);
       color: white;
-    }
-
-    .quote .section-heading p {
-      color: #d2deea;
     }
 
     .quote-layout {
@@ -371,25 +383,29 @@
     }
 
     .quote-info h3 {
-      font-size: 28px;
+      font-size: 30px;
       margin-bottom: 15px;
     }
 
     .quote-info p {
-      color: #d2deea;
+      color: #d4e0e9;
       margin-bottom: 25px;
     }
 
     .contact-line {
-      margin-bottom: 12px;
+      margin-bottom: 10px;
       font-weight: 700;
+    }
+
+    .contact-line a {
+      color: white;
     }
 
     form {
       background: white;
       color: var(--navy);
-      padding: 35px;
-      border-radius: 14px;
+      padding: 36px;
+      border-radius: 15px;
       display: grid;
       gap: 18px;
     }
@@ -403,23 +419,21 @@
     label {
       display: block;
       font-weight: 800;
-      margin-bottom: 6px;
       font-size: 14px;
-    }
-
-    .required {
-      color: #d13b3b;
+      margin-bottom: 6px;
     }
 
     input,
     select,
     textarea {
       width: 100%;
-      border: 1px solid #cfd7df;
+      border: 1px solid #cfd8df;
       border-radius: 7px;
       padding: 13px 14px;
       font-size: 15px;
       font-family: inherit;
+      background: white;
+      color: #202b34;
       outline: none;
     }
 
@@ -441,11 +455,11 @@
     }
 
     .submit-btn {
-      border: none;
+      border: 0;
+      border-radius: 7px;
       background: var(--blue);
       color: white;
       padding: 15px 22px;
-      border-radius: 7px;
       font-size: 16px;
       font-weight: 900;
       cursor: pointer;
@@ -454,6 +468,8 @@
     .submit-btn:hover {
       background: #0d66b5;
     }
+
+    /* FOOTER */
 
     footer {
       background: var(--navy-dark);
@@ -464,14 +480,13 @@
     .footer-grid {
       width: min(1180px, 90%);
       margin: auto;
-      display: flex;
-      justify-content: space-between;
-      gap: 30px;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr;
+      gap: 35px;
     }
 
     .footer-brand {
-      font-size: 26px;
+      font-size: 27px;
       font-weight: 900;
       letter-spacing: 2px;
     }
@@ -479,6 +494,10 @@
     footer p,
     footer a {
       color: #cdd8e2;
+    }
+
+    footer a:hover {
+      color: white;
     }
 
     .copyright {
@@ -490,132 +509,164 @@
       font-size: 14px;
     }
 
-    .menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  color: var(--navy);
-  font-size: 30px;
-  cursor: pointer;
-  padding: 5px;
-}
+    /* TABLET + MOBILE */
 
-@media (max-width: 900px) {
+    @media (max-width: 900px) {
 
-  .menu-toggle {
-    display: block;
-    order: 2;
-  }
-
-  /* ...resto del código móvil... */
-
-  .hero {
-    min-height: 74vh;
-  }
-
-  /* Ajustes de espacio para celular */
-
-  section {
-    padding: 55px 0;
-  }
-
-  .services,
-  #apropos {
-    min-height: auto !important;
-    height: auto !important;
-  }
-
-  .service-grid {
-    gap: 16px;
-  }
-
-  .service-card {
-    min-height: auto !important;
-    height: auto !important;
-    padding: 24px;
-  }
-
-  .why-grid {
-    gap: 30px;
-    align-items: start;
-  }
-
-  .why-box {
-    margin: 0;
-    padding: 30px 24px;
-  }
-  #apropos {
-  padding: 40px 0 !important;
-  margin: 0 !important;
-  min-height: 0 !important;
-  height: auto !important;
-}
-
-#apropos .container {
-  width: 90% !important;
-  margin: 0 auto !important;
-}
-
-.why-grid {
-  display: flex !important;
-  flex-direction: column !important;
-  gap: 30px !important;
-  align-items: stretch !important;
-  justify-content: flex-start !important;
-  height: auto !important;
-  min-height: 0 !important;
-}
-
-.why-box {
-  width: 100% !important;
-  height: auto !important;
-  min-height: 0 !important;
-  margin: 0 !important;
-  padding: 30px 24px !important;
-  background: #062746 !important;
-  color: white !important;
-}
-
-.why-text {
-  width: 100% !important;
-  height: auto !important;
-  min-height: 0 !important;
-  margin: 0 !important;
-}
-
-.why-text h2 {
-  font-size: 32px !important;
-}
-
-.services {
-  padding-bottom: 40px !important;
-}
-
-#apropos {
-  padding-top: 40px !important;
-}
-}
-  
-      .service-grid {
-        grid-template-columns: 1fr;
+      .navbar {
+        height: 82px;
+        gap: 14px;
       }
 
-      .why-grid,
+      .brand img {
+        width: 105px;
+        height: 66px;
+      }
+
+      .menu-toggle {
+        display: block;
+        order: 2;
+      }
+
+      .language-switch {
+        order: 3;
+        margin-left: auto;
+      }
+
+      nav {
+        display: none;
+        position: absolute;
+        top: 82px;
+        left: -5vw;
+        width: 100vw;
+        background: white;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 15px 5%;
+        border-top: 1px solid var(--border);
+        box-shadow: 0 15px 25px rgba(0,0,0,.09);
+      }
+
+      nav.open {
+        display: flex;
+      }
+
+      nav a {
+        padding: 14px 0;
+        border-bottom: 1px solid var(--border);
+      }
+
+      nav a:last-child {
+        border-bottom: 0;
+      }
+
+      .hero {
+        min-height: 560px;
+      }
+
+      .hero-inner {
+        padding: 65px 0;
+      }
+
+      .hero h1 {
+        font-size: clamp(38px, 11vw, 53px);
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
+
+      section {
+        padding: 60px 0;
+      }
+
+      .service-grid {
+        grid-template-columns: 1fr;
+        gap: 17px;
+      }
+
+      .service-card {
+        padding: 25px;
+      }
+
+      .why-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        align-items: start;
+      }
+
+      .why-box {
+        padding: 32px 26px;
+      }
+
       .quote-layout {
         grid-template-columns: 1fr;
+        gap: 35px;
       }
 
       .form-row {
         grid-template-columns: 1fr;
       }
 
+      form {
+        padding: 28px 22px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+    }
+
+    @media (max-width: 480px) {
+
+      .navbar {
+        width: 92%;
+      }
+
+      .brand img {
+        width: 95px;
+      }
+
+      .language-switch {
+        font-size: 14px;
+      }
+
+      .menu-toggle {
+        font-size: 28px;
+      }
+
       .hero {
-        min-height: 74vh;
+        min-height: auto;
+      }
+
+      .hero-inner {
+        padding: 65px 0 70px;
+      }
+
+      .hero h1 {
+        font-size: 39px;
+      }
+
+      .buttons {
+        flex-direction: column;
+      }
+
+      .btn {
+        text-align: center;
+        width: 100%;
+      }
+
+      section {
+        padding: 52px 0;
+      }
+
+      .section-heading {
+        margin-bottom: 30px;
       }
     }
   </style>
-
-  
 </head>
 
 <body>
@@ -623,13 +674,20 @@
 <header>
   <div class="navbar">
 
-<a href="#accueil" class="brand">
-  <img src="logo-nexo1.png" alt="NEXO Entretien Commercial">
-</a>
-<button class="menu-toggle" id="menuToggle" aria-label="Menu">
-  ☰
-</button>
-    <nav>
+    <a href="#accueil" class="brand">
+      <img src="logo-nexo1.png" alt="NEXO Entretien Commercial">
+    </a>
+
+    <button
+      class="menu-toggle"
+      id="menuToggle"
+      type="button"
+      aria-label="Ouvrir le menu"
+    >
+      ☰
+    </button>
+
+    <nav id="navMenu">
       <a href="#accueil" data-fr="Accueil" data-en="Home">Accueil</a>
       <a href="#services" data-fr="Services" data-en="Services">Services</a>
       <a href="#apropos" data-fr="À propos" data-en="About">À propos</a>
@@ -638,9 +696,9 @@
     </nav>
 
     <div class="language-switch">
-      <button id="frBtn" class="active">FR</button>
+      <button id="frBtn" class="active" type="button">FR</button>
       <span>|</span>
-      <button id="enBtn">EN</button>
+      <button id="enBtn" type="button">EN</button>
     </div>
 
   </div>
@@ -648,9 +706,7 @@
 
 
 <section class="hero" id="accueil">
-
   <div class="hero-inner">
-
     <div class="hero-content">
 
       <div
@@ -698,14 +754,11 @@
       </div>
 
     </div>
-
   </div>
-
 </section>
 
 
 <section class="services" id="services">
-
   <div class="container">
 
     <div class="section-heading center">
@@ -726,35 +779,28 @@
       </h2>
 
       <p
-        data-fr="Nous desservons différents types d'espaces commerciaux et adaptons notre entretien aux besoins de chaque établissement."
-        data-en="We serve different types of commercial spaces and tailor our cleaning services to each facility."
+        data-fr="Nous adaptons notre service aux besoins, à l'horaire et au type d'établissement de chaque client."
+        data-en="We tailor our service to each client's facility, schedule and specific needs."
       >
-        Nous desservons différents types d'espaces commerciaux et adaptons notre entretien aux besoins de chaque établissement.
+        Nous adaptons notre service aux besoins, à l'horaire et au type d'établissement de chaque client.
       </p>
 
     </div>
 
-
     <div class="service-grid">
 
-      <div class="service-card">
+      <article class="service-card">
         <div class="service-number">01</div>
-        <h3
-          data-fr="Cliniques"
-          data-en="Clinics"
-        >
-          Cliniques
-        </h3>
+        <h3 data-fr="Cliniques" data-en="Clinics">Cliniques</h3>
         <p
           data-fr="Entretien des cliniques médicales, dentaires et autres espaces professionnels."
           data-en="Cleaning for medical, dental and other professional clinics."
         >
           Entretien des cliniques médicales, dentaires et autres espaces professionnels.
         </p>
-      </div>
+      </article>
 
-
-      <div class="service-card">
+      <article class="service-card">
         <div class="service-number">02</div>
         <h3
           data-fr="Gyms et centres d'entraînement"
@@ -763,32 +809,25 @@
           Gyms et centres d'entraînement
         </h3>
         <p
-          data-fr="Entretien des espaces d'entraînement, vestiaires, salles communes et installations."
-          data-en="Cleaning of workout areas, locker rooms, common spaces and facilities."
+          data-fr="Entretien des espaces d'entraînement, vestiaires et installations communes."
+          data-en="Cleaning of workout areas, locker rooms and shared facilities."
         >
-          Entretien des espaces d'entraînement, vestiaires, salles communes et installations.
+          Entretien des espaces d'entraînement, vestiaires et installations communes.
         </p>
-      </div>
+      </article>
 
-
-      <div class="service-card">
+      <article class="service-card">
         <div class="service-number">03</div>
-        <h3
-          data-fr="Bureaux"
-          data-en="Offices"
-        >
-          Bureaux
-        </h3>
+        <h3 data-fr="Bureaux" data-en="Offices">Bureaux</h3>
         <p
           data-fr="Entretien régulier des bureaux, salles de réunion, cuisines et espaces de travail."
           data-en="Regular cleaning of offices, meeting rooms, kitchens and workspaces."
         >
           Entretien régulier des bureaux, salles de réunion, cuisines et espaces de travail.
         </p>
-      </div>
+      </article>
 
-
-      <div class="service-card">
+      <article class="service-card">
         <div class="service-number">04</div>
         <h3
           data-fr="Immeubles et aires communes"
@@ -797,32 +836,25 @@
           Immeubles et aires communes
         </h3>
         <p
-          data-fr="Entretien des halls, corridors, escaliers, ascenseurs et autres espaces partagés."
-          data-en="Cleaning of lobbies, hallways, stairs, elevators and other shared spaces."
+          data-fr="Entretien des halls, corridors, escaliers, ascenseurs et espaces partagés."
+          data-en="Cleaning of lobbies, hallways, stairs, elevators and shared spaces."
         >
-          Entretien des halls, corridors, escaliers, ascenseurs et autres espaces partagés.
+          Entretien des halls, corridors, escaliers, ascenseurs et espaces partagés.
         </p>
-      </div>
+      </article>
 
-
-      <div class="service-card">
+      <article class="service-card">
         <div class="service-number">05</div>
-        <h3
-          data-fr="Commerces"
-          data-en="Retail spaces"
-        >
-          Commerces
-        </h3>
+        <h3 data-fr="Commerces" data-en="Retail spaces">Commerces</h3>
         <p
           data-fr="Solutions d'entretien pour boutiques, salons, studios et autres établissements commerciaux."
           data-en="Cleaning solutions for shops, salons, studios and other commercial establishments."
         >
           Solutions d'entretien pour boutiques, salons, studios et autres établissements commerciaux.
         </p>
-      </div>
+      </article>
 
-
-      <div class="service-card">
+      <article class="service-card">
         <div class="service-number">06</div>
         <h3
           data-fr="Autres espaces commerciaux"
@@ -836,17 +868,14 @@
         >
           Votre établissement ne figure pas dans la liste? Parlez-nous de vos besoins.
         </p>
-      </div>
+      </article>
 
     </div>
-
   </div>
-
 </section>
 
 
 <section id="apropos">
-
   <div class="container">
 
     <div class="why-grid">
@@ -874,7 +903,7 @@
           <strong data-fr="Qualité" data-en="Quality">Qualité</strong>
           <span
             data-fr="Un service professionnel adapté aux besoins de votre entreprise."
-            data-en="Professional service tailored to the needs of your business."
+            data-en="Professional service tailored to your business needs."
           >
             Un service professionnel adapté aux besoins de votre entreprise.
           </span>
@@ -891,7 +920,6 @@
         </div>
 
       </div>
-
 
       <div class="why-text">
 
@@ -927,14 +955,11 @@
       </div>
 
     </div>
-
   </div>
-
 </section>
 
 
 <section class="quote" id="soumission">
-
   <div class="container">
 
     <div class="quote-layout">
@@ -943,7 +968,7 @@
 
         <div
           class="eyebrow"
-          style="color:#8ac9ff;"
+          style="color:#81c7ff;"
           data-fr="Demande de soumission"
           data-en="Quote request"
         >
@@ -965,11 +990,13 @@
         </p>
 
         <div class="contact-line">
-          514-448-7347
+          <a href="tel:+15144487347">514-448-7347</a>
         </div>
 
         <div class="contact-line">
-          nexoentretien.sa@gmail.com
+          <a href="mailto:nexoentretien.sa@gmail.com">
+            nexoentretien.sa@gmail.com
+          </a>
         </div>
 
       </div>
@@ -992,81 +1019,43 @@
           </label>
         </p>
 
-
         <div class="form-row">
 
           <div>
-            <label
-              data-fr="Nom complet"
-              data-en="Full name"
-            >
+            <label data-fr="Nom complet" data-en="Full name">
               Nom complet
             </label>
-
-            <input
-              type="text"
-              name="nom"
-              required
-            >
+            <input type="text" name="nom" required>
           </div>
 
-
           <div>
-            <label
-              data-fr="Entreprise"
-              data-en="Company"
-            >
+            <label data-fr="Entreprise" data-en="Company">
               Entreprise
             </label>
-
-            <input
-              type="text"
-              name="entreprise"
-              required
-            >
+            <input type="text" name="entreprise" required>
           </div>
 
         </div>
-
 
         <div class="form-row">
 
           <div>
-            <label
-              data-fr="Téléphone"
-              data-en="Phone"
-            >
+            <label data-fr="Téléphone" data-en="Phone">
               Téléphone
             </label>
-
-            <input
-              type="tel"
-              name="telephone"
-              required
-            >
+            <input type="tel" name="telephone" required>
           </div>
 
-
           <div>
-            <label
-              data-fr="Courriel"
-              data-en="Email"
-            >
+            <label data-fr="Courriel" data-en="Email">
               Courriel
             </label>
-
-            <input
-              type="email"
-              name="email"
-              required
-            >
+            <input type="email" name="email" required>
           </div>
 
         </div>
 
-
         <div>
-
           <label
             data-fr="Adresse de l'établissement"
             data-en="Facility address"
@@ -1074,19 +1063,12 @@
             Adresse de l'établissement
           </label>
 
-          <input
-            type="text"
-            name="adresse"
-            required
-          >
-
+          <input type="text" name="adresse" required>
         </div>
-
 
         <div class="form-row">
 
           <div>
-
             <label
               data-fr="Type d'établissement"
               data-en="Facility type"
@@ -1095,42 +1077,17 @@
             </label>
 
             <select name="type_etablissement" required>
-
-              <option value="">
-                Sélectionnez
-              </option>
-
-              <option value="clinique">
-                Clinique
-              </option>
-
-              <option value="gym">
-                Gym / centre d'entraînement
-              </option>
-
-              <option value="bureau">
-                Bureaux
-              </option>
-
-              <option value="immeuble">
-                Immeuble / aire commune
-              </option>
-
-              <option value="commerce">
-                Commerce
-              </option>
-
-              <option value="autre">
-                Autre
-              </option>
-
+              <option value="">Sélectionnez</option>
+              <option value="clinique">Clinique</option>
+              <option value="gym">Gym / centre d'entraînement</option>
+              <option value="bureau">Bureaux</option>
+              <option value="immeuble">Immeuble / aire commune</option>
+              <option value="commerce">Commerce</option>
+              <option value="autre">Autre</option>
             </select>
-
           </div>
 
-
           <div>
-
             <label
               data-fr="Fréquence souhaitée"
               data-en="Preferred frequency"
@@ -1139,40 +1096,18 @@
             </label>
 
             <select name="frequence" required>
-
-              <option value="">
-                Sélectionnez
-              </option>
-
-              <option>
-                1 fois par semaine
-              </option>
-
-              <option>
-                2 fois par semaine
-              </option>
-
-              <option>
-                3 fois par semaine
-              </option>
-
-              <option>
-                4-5 fois par semaine
-              </option>
-
-              <option>
-                À déterminer
-              </option>
-
+              <option value="">Sélectionnez</option>
+              <option value="1">1 fois par semaine</option>
+              <option value="2">2 fois par semaine</option>
+              <option value="3">3 fois par semaine</option>
+              <option value="4-5">4-5 fois par semaine</option>
+              <option value="determine">À déterminer</option>
             </select>
-
           </div>
 
         </div>
 
-
         <div>
-
           <label
             data-fr="Superficie approximative"
             data-en="Approximate size"
@@ -1183,15 +1118,13 @@
           <input
             type="text"
             name="superficie"
+            id="superficie"
             placeholder="Ex. 3 500 pi² / Je ne sais pas"
             required
           >
-
         </div>
 
-
         <div>
-
           <label
             data-fr="Informations supplémentaires"
             data-en="Additional information"
@@ -1201,11 +1134,10 @@
 
           <textarea
             name="message"
+            id="message"
             placeholder="Décrivez brièvement vos besoins particuliers..."
           ></textarea>
-
         </div>
-
 
         <p
           class="form-note"
@@ -1214,7 +1146,6 @@
         >
           Tous les champs ci-dessus sont requis, sauf les informations supplémentaires.
         </p>
-
 
         <button
           class="submit-btn"
@@ -1228,9 +1159,7 @@
       </form>
 
     </div>
-
   </div>
-
 </section>
 
 
@@ -1239,42 +1168,39 @@
   <div class="footer-grid">
 
     <div>
-      <div class="footer-brand">
-        NEXO
-      </div>
-      <p>Entretien Commercial</p>
+      <div class="footer-brand">NEXO</div>
+      <p data-fr="Entretien Commercial" data-en="Commercial Cleaning">
+        Entretien Commercial
+      </p>
     </div>
 
     <div>
-      <strong
-        data-fr="Contact"
-        data-en="Contact"
-      >
-        Contact
-      </strong>
-
-      <p>514-448-7347</p>
-      <p>nexoentretien.sa@gmail.com</p>
+      <strong>Contact</strong>
+      <p><a href="tel:+15144487347">514-448-7347</a></p>
+      <p>
+        <a href="mailto:nexoentretien.sa@gmail.com">
+          nexoentretien.sa@gmail.com
+        </a>
+      </p>
     </div>
 
     <div>
-      <strong
-        data-fr="Suivez-nous"
-        data-en="Follow us"
-      >
+      <strong data-fr="Suivez-nous" data-en="Follow us">
         Suivez-nous
       </strong>
-      
+
       <p>
-  <a href="https://www.instagram.com/nexo.entretien?stkn=aXhoYjhjYjdzdmx6" target="_blank" rel="noopener noreferrer">
-    Instagram — nexo.entretien
-  </a>
-</p>
-      <p>Facebook — Nexo Entretien</p>
+        <a
+          href="https://www.instagram.com/nexo.entretien?stkn=aXhoYjhjYjdzdmx6"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Instagram — Nexo Entretien
+        </a>
+      </p>
     </div>
 
   </div>
-
 
   <div class="copyright">
     © 2026 NEXO Entretien Commercial
@@ -1287,7 +1213,24 @@
   const frBtn = document.getElementById("frBtn");
   const enBtn = document.getElementById("enBtn");
 
+  const menuToggle = document.getElementById("menuToggle");
+  const navMenu = document.getElementById("navMenu");
+
+  const typeSelect =
+    document.querySelector('select[name="type_etablissement"]');
+
+  const frequencySelect =
+    document.querySelector('select[name="frequence"]');
+
+  const superficie =
+    document.getElementById("superficie");
+
+  const message =
+    document.getElementById("message");
+
+
   const translations = {
+
     fr: {
       select: "Sélectionnez",
       clinic: "Clinique",
@@ -1303,8 +1246,11 @@
       frequent: "4-5 fois par semaine",
       determine: "À déterminer",
 
-      sizePlaceholder: "Ex. 3 500 pi² / Je ne sais pas",
-      messagePlaceholder: "Décrivez brièvement vos besoins particuliers..."
+      size:
+        "Ex. 3 500 pi² / Je ne sais pas",
+
+      message:
+        "Décrivez brièvement vos besoins particuliers..."
     },
 
     en: {
@@ -1322,126 +1268,138 @@
       frequent: "4-5 times a week",
       determine: "To be determined",
 
-      sizePlaceholder: "Ex. 3,500 sq. ft. / I don't know",
-      messagePlaceholder: "Briefly describe any specific needs..."
+      size:
+        "Ex. 3,500 sq. ft. / I don't know",
+
+      message:
+        "Briefly describe any specific needs..."
     }
   };
+
 
   function changeLanguage(language) {
 
     document.documentElement.lang = language;
 
-    document.querySelectorAll("[data-fr]").forEach(element => {
-      element.textContent =
-        language === "fr"
-          ? element.dataset.fr
-          : element.dataset.en;
-    });
+    document
+      .querySelectorAll("[data-fr]")
+      .forEach(element => {
 
-    const typeSelect =
-      document.querySelector('select[name="type_etablissement"]');
+        element.textContent =
+          language === "fr"
+            ? element.dataset.fr
+            : element.dataset.en;
 
-    if (typeSelect) {
-      typeSelect.options[0].text =
-        translations[language].select;
+      });
 
-      typeSelect.options[1].text =
-        translations[language].clinic;
 
-      typeSelect.options[2].text =
-        translations[language].gym;
+    typeSelect.options[0].text =
+      translations[language].select;
 
-      typeSelect.options[3].text =
-        translations[language].office;
+    typeSelect.options[1].text =
+      translations[language].clinic;
 
-      typeSelect.options[4].text =
-        translations[language].building;
+    typeSelect.options[2].text =
+      translations[language].gym;
 
-      typeSelect.options[5].text =
-        translations[language].retail;
+    typeSelect.options[3].text =
+      translations[language].office;
 
-      typeSelect.options[6].text =
-        translations[language].other;
-    }
+    typeSelect.options[4].text =
+      translations[language].building;
 
-    const frequencySelect =
-      document.querySelector('select[name="frequence"]');
+    typeSelect.options[5].text =
+      translations[language].retail;
 
-    if (frequencySelect) {
-      frequencySelect.options[0].text =
-        translations[language].select;
+    typeSelect.options[6].text =
+      translations[language].other;
 
-      frequencySelect.options[1].text =
-        translations[language].once;
 
-      frequencySelect.options[2].text =
-        translations[language].twice;
+    frequencySelect.options[0].text =
+      translations[language].select;
 
-      frequencySelect.options[3].text =
-        translations[language].three;
+    frequencySelect.options[1].text =
+      translations[language].once;
 
-      frequencySelect.options[4].text =
-        translations[language].frequent;
+    frequencySelect.options[2].text =
+      translations[language].twice;
 
-      frequencySelect.options[5].text =
-        translations[language].determine;
-    }
+    frequencySelect.options[3].text =
+      translations[language].three;
 
-    const sizeInput =
-      document.querySelector('input[name="superficie"]');
+    frequencySelect.options[4].text =
+      translations[language].frequent;
 
-    if (sizeInput) {
-      sizeInput.placeholder =
-        translations[language].sizePlaceholder;
-    }
+    frequencySelect.options[5].text =
+      translations[language].determine;
 
-    const message =
-      document.querySelector('textarea[name="message"]');
 
-    if (message) {
-      message.placeholder =
-        translations[language].messagePlaceholder;
-    }
+    superficie.placeholder =
+      translations[language].size;
 
-    if (language === "fr") {
-      frBtn.classList.add("active");
-      enBtn.classList.remove("active");
-    } else {
-      enBtn.classList.add("active");
-      frBtn.classList.remove("active");
-    }
+    message.placeholder =
+      translations[language].message;
 
-    localStorage.setItem("nexoLanguage", language);
+
+    frBtn.classList.toggle(
+      "active",
+      language === "fr"
+    );
+
+    enBtn.classList.toggle(
+      "active",
+      language === "en"
+    );
+
+
+    localStorage.setItem(
+      "nexoLanguage",
+      language
+    );
   }
+
 
   frBtn.addEventListener("click", () => {
     changeLanguage("fr");
   });
 
+
   enBtn.addEventListener("click", () => {
     changeLanguage("en");
   });
+
+
+  menuToggle.addEventListener("click", () => {
+
+    navMenu.classList.toggle("open");
+
+    menuToggle.textContent =
+      navMenu.classList.contains("open")
+        ? "✕"
+        : "☰";
+  });
+
+
+  navMenu
+    .querySelectorAll("a")
+    .forEach(link => {
+
+      link.addEventListener("click", () => {
+
+        navMenu.classList.remove("open");
+
+        menuToggle.textContent = "☰";
+
+      });
+
+    });
+
 
   const savedLanguage =
     localStorage.getItem("nexoLanguage") || "fr";
 
   changeLanguage(savedLanguage);
-  const menuToggle = document.getElementById("menuToggle");
-const navMenu = document.querySelector("nav");
-
-menuToggle.addEventListener("click", () => {
-  navMenu.classList.toggle("open");
-
-  menuToggle.textContent =
-    navMenu.classList.contains("open") ? "✕" : "☰";
-});
-
-navMenu.querySelectorAll("a").forEach(link => {
-  link.addEventListener("click", () => {
-    navMenu.classList.remove("open");
-    menuToggle.textContent = "☰";
-  });
-});
 </script>
+
 </body>
 </html>
